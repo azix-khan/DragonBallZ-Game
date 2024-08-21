@@ -3,11 +3,13 @@ import 'package:dragon_ball_characters_list/list_details/details_page.dart';
 import 'package:flutter/material.dart';
 
 class ListPage extends StatefulWidget {
+  const ListPage({super.key});
+
   @override
-  _ListPageState createState() => _ListPageState();
+  ListPageState createState() => ListPageState();
 }
 
-class _ListPageState extends State<ListPage> {
+class ListPageState extends State<ListPage> {
   PageController? _controller;
 
   _goToDetail(Character character) {
@@ -25,7 +27,7 @@ class _ListPageState extends State<ListPage> {
                   );
                 });
           },
-          transitionDuration: Duration(milliseconds: 400)),
+          transitionDuration: const Duration(milliseconds: 400)),
     );
   }
 
@@ -51,8 +53,11 @@ class _ListPageState extends State<ListPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Dragon Ball"),
-        backgroundColor: Colors.black54,
+        centerTitle: true,
+        title: const Text("Dragon Ball Z"),
+        // elevation: 2.0,
+        // backgroundColor: Colors.white,
+        surfaceTintColor: Colors.white,
       ),
       body: PageView.builder(
           scrollDirection: Axis.vertical,
@@ -83,11 +88,11 @@ class ListItem extends StatelessWidget {
   final VoidCallback onTap;
 
   const ListItem({
-    Key? key,
+    super.key,
     required this.character,
     required this.resizeFactor,
     required this.onTap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -97,7 +102,7 @@ class ListItem extends StatelessWidget {
       onTap: onTap,
       child: Align(
         alignment: Alignment.topCenter,
-        child: Container(
+        child: SizedBox(
           width: width * resizeFactor,
           height: height * resizeFactor,
           child: Stack(
