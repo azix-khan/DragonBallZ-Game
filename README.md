@@ -1,16 +1,6 @@
 # dragon_ball_characters_list
 
-A new Flutter project.
+Dragon Ball Z Game Characters animated List in Flutter.
 
 ## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![11](https://github.com/user-attachments/assets/ec703962-b785-4266-b3e5-52b53c2536cd)
