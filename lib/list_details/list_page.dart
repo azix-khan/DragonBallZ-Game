@@ -16,18 +16,19 @@ class ListPageState extends State<ListPage> {
     final page = DetailPage(character: character);
     Navigator.of(context).push(
       PageRouteBuilder<Null>(
-          pageBuilder: (BuildContext context, Animation<double> animation,
-              Animation<double> secondaryAnimation) {
-            return AnimatedBuilder(
-                animation: animation,
-                builder: (BuildContext context, Widget? child) {
-                  return Opacity(
-                    opacity: animation.value,
-                    child: page,
-                  );
-                });
-          },
-          transitionDuration: const Duration(milliseconds: 400)),
+        pageBuilder: (BuildContext context, Animation<double> animation,
+            Animation<double> secondaryAnimation) {
+          return AnimatedBuilder(
+              animation: animation,
+              builder: (BuildContext context, Widget? child) {
+                return Opacity(
+                  opacity: animation.value,
+                  child: page,
+                );
+              });
+        },
+        transitionDuration: const Duration(milliseconds: 400),
+      ),
     );
   }
 

@@ -5,22 +5,22 @@ class DetailPage extends StatefulWidget {
   final Character character;
 
   const DetailPage({
-    Key? key,
+    super.key,
     required this.character,
-  }) : super(key: key);
+  });
 
   @override
-  _DetailPageState createState() => _DetailPageState();
+  DetailPageState createState() => DetailPageState();
 }
 
-class _DetailPageState extends State<DetailPage>
+class DetailPageState extends State<DetailPage>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
 
   @override
   void initState() {
-    _controller =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 500));
+    _controller = AnimationController(
+        vsync: this, duration: const Duration(milliseconds: 500));
     _controller.forward();
     super.initState();
   }
@@ -47,7 +47,7 @@ class _DetailPageState extends State<DetailPage>
             backgroundColor: Color(widget.character.color!),
             elevation: 0,
             title: Text(widget.character.title!),
-            leading: CloseButton(),
+            leading: const CloseButton(),
           ),
           body: SingleChildScrollView(
             child: Column(
@@ -64,15 +64,15 @@ class _DetailPageState extends State<DetailPage>
                   animation: _controller,
                   builder: (context, widget) => Transform.translate(
                     transformHitTests: false,
-                    offset: Offset.lerp(
-                        Offset(0.0, 200.0), Offset.zero, _controller.value)!,
+                    offset: Offset.lerp(const Offset(0.0, 200.0), Offset.zero,
+                        _controller.value)!,
                     child: widget,
                   ),
                   child: Padding(
-                    padding: EdgeInsets.all(10),
+                    padding: const EdgeInsets.all(10),
                     child: Text(
                       widget.character.description!,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 18,
                         color: Colors.white,
                         fontWeight: FontWeight.w400,
